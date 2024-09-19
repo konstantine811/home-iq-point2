@@ -1,4 +1,5 @@
 import Header from "@/components/common/header";
+import FourthSection from "@/components/pages/home/fourth-section";
 import MainSection from "@/components/pages/home/main-section";
 import SecondSection from "@/components/pages/home/second-section";
 import ThirdSection from "@/components/pages/home/third-section";
@@ -12,6 +13,7 @@ export default function Home() {
       </div>
       <SecondSection />
       <ThirdSection />
+      <FourthSection />
     </>
   );
 }

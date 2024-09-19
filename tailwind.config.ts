@@ -28,11 +28,15 @@ const config: Config = {
       backgroundImage: {
         "main-bg": "url('/assets/bg/main-bg.jpg')",
       },
+      fontSize: {
+        "2xl": "2rem",
+      },
       colors: {
         gray: {
+          300: "#E5E7EB",
           400: "#D1D5DB",
           500: "#d5d5d5",
-          600: "#D9D9D9",
+          600: "#4B5563",
           700: "#F3F4F6",
           900: "#6B7280",
         },
@@ -41,6 +45,7 @@ const config: Config = {
           700: "#FC4921",
         },
         blue: {
+          800: "#1F2937",
           900: "#111827",
         },
         background: "hsl(var(--background))",
