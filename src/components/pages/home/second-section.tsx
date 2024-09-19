@@ -44,7 +44,7 @@ const svgPathConfig = [
 
 const SecondSection = () => {
   return (
-    <div className="container grid md:grid-cols-5 grid-cols-2 gap-8">
+    <div className="container grid md:grid-cols-5 grid-cols-2 gap-8 mb-8">
       {svgPathConfig.map((data, index) => {
         const SvgComponent = dynamic(data.path);
         return (
