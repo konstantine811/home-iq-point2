@@ -25,12 +25,23 @@ const config: Config = {
         xl: "1240px",
         "2xl": "1240px",
       },
+      backgroundImage: {
+        "main-bg": "url('/assets/bg/main-bg.jpg')",
+      },
       colors: {
         gray: {
+          400: "#D1D5DB",
           500: "#d5d5d5",
           600: "#D9D9D9",
-          700: "#B5B5B5",
-          900: "#605E5E",
+          700: "#F3F4F6",
+          900: "#6B7280",
+        },
+        red: {
+          100: "#FFF1EF",
+          700: "#FC4921",
+        },
+        blue: {
+          900: "#111827",
         },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",

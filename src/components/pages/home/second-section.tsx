@@ -1,35 +1,66 @@
-import CarouselInfinite from "@/components/common/carousel-infinite";
-import { Button } from "@/components/ui/button";
+import dynamic from "next/dynamic";
+const svgPathConfig = [
+  {
+    path: () => import("@/assets/svg/bathroom.svg"),
+    title: "Bathroom Remodel",
+  },
+  {
+    path: () => import("@/assets/svg/kitchen.svg"),
+    title: "Kitchen Remodel",
+  },
+  {
+    path: () => import("@/assets/svg/gutter.svg"),
+    title: "Gutter",
+  },
+  {
+    path: () => import("@/assets/svg/home-security.svg"),
+    title: "Home Security",
+  },
+  {
+    path: () => import("@/assets/svg/hvac.svg"),
+    title: "HVAC",
+  },
+  {
+    path: () => import("@/assets/svg/roofing.svg"),
+    title: "Roofing",
+  },
+  {
+    path: () => import("@/assets/svg/windows.svg"),
+    title: "Windows",
+  },
+  {
+    path: () => import("@/assets/svg/bath-to-shower.svg"),
+    title: "Bath to Shower",
+  },
+  {
+    path: () => import("@/assets/svg/walk-in-tubs.svg"),
+    title: "Walk-in Tubs",
+  },
+  {
+    path: () => import("@/assets/svg/walk-in-shower.svg"),
+    title: "Walk-in Shower",
+  },
+];
 
 const SecondSection = () => {
-  const items = Array.from({ length: 16 });
-  const items2 = Array.from({ length: 10 });
   return (
-    <div className="w-full">
-      <CarouselInfinite>
-        {items.map((_, index) => {
-          return (
-            <Button
-              key={index}
-              className="rounded-full bg-gray-600 hover:bg-gray-700 text-sm text-black px-8 py-4"
-            >
-              Company logo
-            </Button>
-          );
-        })}
-      </CarouselInfinite>
-      <CarouselInfinite delay={300}>
-        {items2.map((_, index) => {
-          return (
-            <Button
-              key={index}
-              className="rounded-full bg-gray-600 hover:bg-gray-700 text-sm text-black px-8 py-4"
-            >
-              Company logo
-            </Button>
-          );
-        })}
-      </CarouselInfinite>
+    <div className="container grid md:grid-cols-5 grid-cols-2 gap-8">
+      {svgPathConfig.map((data, index) => {
+        const SvgComponent = dynamic(data.path);
+        return (
+          <div
+            className="flex flex-col p-4 items-center justify-center h-[128px] hover:bg-red-100 transition-all duration-300 rounded-lg cursor-pointer"
+            key={index}
+          >
+            <div className="grow flex items-end mb-4">
+              <SvgComponent />
+            </div>
+            <p className="text-blue-900 font-semibold text-sm text-center">
+              {data.title}
+            </p>
+          </div>
+        );
+      })}
     </div>
   );
 };

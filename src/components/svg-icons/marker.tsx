@@ -1,0 +1,38 @@
+import { ThemeColors } from "@/configs/theme-colors";
+
+interface Props {
+  stroke?: ThemeColors;
+}
+
+const MarkerIcon = ({ stroke = ThemeColors.blackLight }: Props) => {
+  return (
+    <svg
+      width="25"
+      height="24"
+      viewBox="0 0 25 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12.5 12V12C11.3953 12 10.5 11.1047 10.5 10V10C10.5 8.89533 11.3953 8 12.5 8V8C13.6047 8 14.5 8.89533 14.5 10V10C14.5 11.1047 13.6047 12 12.5 12Z"
+        stroke={stroke}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M12.5 21C12.5 21 5.5 15.25 5.5 10C5.5 6.134 8.634 3 12.5 3C16.366 3 19.5 6.134 19.5 10C19.5 15.25 12.5 21 12.5 21Z"
+        stroke={stroke}
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
+
+export default MarkerIcon;
