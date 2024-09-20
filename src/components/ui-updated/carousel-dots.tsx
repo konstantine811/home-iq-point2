@@ -8,9 +8,10 @@ import {
 
 interface Props {
   children: React.ReactNode;
+  className?: string;
 }
 
-const CarouselDots = ({ children }: Props) => {
+const CarouselDots = ({ children, className = "" }: Props) => {
   const [api, setApi] = useState<CarouselApi>();
   const [dots, setDots] = useState<number[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
@@ -40,9 +41,12 @@ const CarouselDots = ({ children }: Props) => {
     };
   }, [api]);
   return (
-    <Carousel setApi={setApi}>
+    <Carousel
+      setApi={setApi}
+      className={`max-full md:max-w-[calc(100%-70px)] xl:max-w-full mx-auto ${className}`}
+    >
       {children}
-      <div className="flex justify-center mt-10 ">
+      <div className="flex justify-center mt-10">
         {dots.map((dotIndex) => (
           <div
             key={dotIndex}
@@ -60,8 +64,8 @@ const CarouselDots = ({ children }: Props) => {
           </div>
         ))}
       </div>
-      <CarouselPrevious className="hover:bg-red-100  custom-carousel-arrow hidden sm:flex" />
-      <CarouselNext className="hover:bg-red-100  custom-carousel-arrow hidden sm:flex" />
+      <CarouselPrevious className="hover:bg-red-100  custom-carousel-arrow hidden md:flex" />
+      <CarouselNext className="hover:bg-red-100  custom-carousel-arrow hidden md:flex" />
     </Carousel>
   );
 };

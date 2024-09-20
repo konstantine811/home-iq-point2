@@ -7,7 +7,7 @@ const NinthSection = () => {
   return (
     <ColoredSection wrapClasses="py-16" innerClasses="sm:flex">
       {/* Title */}
-      <h2 className="text-3xl max-w-xl font-extrabold text-blue-900">
+      <h2 className="text-2xl md:text-3xl max-w-xl font-extrabold text-blue-900">
         Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit
       </h2>
 

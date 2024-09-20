@@ -19,7 +19,7 @@ const MainSection = () => {
         </div>
         <div className="container relative z-50 py-10">
           <div className="max-w-[713px] mx-auto text-center text-white pb-10">
-            <h1 className="text-5xl  font-extrabold  leading-12 pb-6">
+            <h1 className="text-3xl md:text-5xl  font-extrabold  md:leading-12 pb-6">
               Get the right local pro for any home project
             </h1>
             <p className="text-lg font-semibold">

@@ -48,7 +48,7 @@ const ThirdSection = () => {
   return (
     <ColoredSection
       wrapClasses="py-[72px]"
-      innerClasses="grid grid-cols-4 gap-y-8 gap-x-7 justify-center"
+      innerClasses="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-7 justify-center"
     >
       {imageArray.map((data, index) => (
         <div key={index} className="flex justify-center items-center">
