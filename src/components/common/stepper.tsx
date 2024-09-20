@@ -8,7 +8,9 @@ interface Props {
 
 const Stepper = ({ stepperData, className }: Props) => {
   return (
-    <div className={`grid ${className} lg:grid-cols-${stepperData.length}`}>
+    <div
+      className={`lg:grid ${className} hidden lg:grid-cols-${stepperData.length}`}
+    >
       {stepperData.map((data, index) => {
         return (
           <div

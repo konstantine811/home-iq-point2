@@ -47,9 +47,9 @@ const InfiniteCarousel = ({ children, delay = 0 }: Props) => {
     return controls?.stop;
   }, [rerender, xTranslation, duration, width, mustFinish, delay]);
   return (
-    <div className="py-8 relative overflow-hidden h-full">
+    <div className="relative overflow-hidden h-full w-full">
       <motion.div
-        className="absolute left-0 top-4 items-center flex gap-16"
+        className="absolute flex gap-4 w-full"
         style={{ x: xTranslation }}
         ref={ref}
         onHoverStart={() => {

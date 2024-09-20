@@ -33,6 +33,22 @@ const config: Config = {
         "2xl": "2rem",
       },
       colors: {
+        yellow: {
+          100: "#FFFBEB",
+          300: "#E3D258",
+          500: "#FFD700",
+          700: "#FDBF01",
+        },
+        pink: {
+          500: "#F4117B",
+        },
+        green: {
+          500: "#15AE17",
+          900: "#0C7861",
+        },
+        violet: {
+          700: "#2C0EBB",
+        },
         gray: {
           300: "#E5E7EB",
           400: "#D1D5DB",
@@ -46,6 +62,7 @@ const config: Config = {
           700: "#FC4921",
         },
         blue: {
+          500: "#1A7BFF",
           800: "#1F2937",
           900: "#111827",
         },

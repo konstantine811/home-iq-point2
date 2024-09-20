@@ -1,3 +1,5 @@
+import { IReviewCard } from "@/models/data-config/card.model";
+import { ThemeColors } from "./theme-colors";
 export const SVG_PATH_CONFIG = [
   {
     path: () => import("@/assets/svg/bathroom.svg"),
@@ -38,5 +40,67 @@ export const SVG_PATH_CONFIG = [
   {
     path: () => import("@/assets/svg/walk-in-shower.svg"),
     title: "Walk-in Shower",
+  },
+];
+
+export const ReviewCardItems: IReviewCard[] = [
+  {
+    labelColor: ThemeColors["yellow-300"],
+    title: "Rosario Jean Simon",
+    countStar: 5,
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Adipiscing varius sociis elit dolor. In fermentum nunc proin et egestas justo rhoncus. Morbi urna arcu gravida tincidunt arcu nisl habitant. Lectus pulvinar sed lacus massa.",
+  },
+  {
+    labelColor: ThemeColors["blue-500"],
+    title: "Rosario Jean Simon",
+    countStar: 5,
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Adipiscing varius sociis elit dolor. In fermentum nunc proin et egestas justo rhoncus. Morbi urna arcu gravida tincidunt arcu nisl habitant. Lectus pulvinar sed lacus massa.",
+  },
+  {
+    labelColor: ThemeColors["pink-500"],
+    title: "DavidJacques",
+    countStar: 5,
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Adipiscing varius sociis elit dolor. In fermentum nunc proin et egestas justo rhoncus. Morbi urna arcu gravida tincidunt arcu nisl habitant. Lectus pulvinar sed lacus massa.",
+  },
+  {
+    labelColor: ThemeColors["green-500"],
+    title: "Larry C.",
+    countStar: 5,
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Adipiscing varius sociis elit dolor. In fermentum nunc proin et egestas justo rhoncus. Morbi urna arcu gravida tincidunt arcu nisl habitant. Lectus pulvinar sed lacus massa.",
+  },
+  {
+    labelColor: ThemeColors["violet-700"],
+    title: "Frank J.",
+    countStar: 5,
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Adipiscing varius sociis elit dolor. In fermentum nunc proin et egestas justo rhoncus. Morbi urna arcu gravida tincidunt arcu nisl habitant. Lectus pulvinar sed lacus massa.",
+  },
+];
+
+export const ReviewCardItems2: IReviewCard[] = [
+  {
+    labelColor: ThemeColors["yellow-300"],
+    title: "Rosario Jean Simon",
+    countStar: 5,
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Adipiscing varius sociis elit dolor. In fermentum nunc proin et egestas justo rhoncus. Morbi urna arcu gravida tincidunt arcu nisl habitant. Lectus pulvinar sed lacus massa.",
+  },
+  {
+    labelColor: ThemeColors["green-500"],
+    title: "Larry C.",
+    countStar: 5,
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Adipiscing varius sociis elit dolor. In fermentum nunc proin et egestas justo rhoncus. Morbi urna arcu gravida tincidunt arcu nisl habitant. Lectus pulvinar sed lacus massa.",
+  },
+  {
+    labelColor: ThemeColors["violet-700"],
+    title: "Frank J.",
+    countStar: 5,
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Adipiscing varius sociis elit dolor. In fermentum nunc proin et egestas justo rhoncus. Morbi urna arcu gravida tincidunt arcu nisl habitant. Lectus pulvinar sed lacus massa.",
   },
 ];
