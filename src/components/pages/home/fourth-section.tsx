@@ -1,11 +1,11 @@
 "use client";
 
-import CardService from "@/components/common/card-service";
-import CarouselDots from "@/components/ui-updated/carousel-dots";
-import { CarouselContent, CarouselItem } from "@/components/ui/carousel";
-import { ICardService } from "@/models/data-config/card.model";
+import CarouselSection from "@/components/common/carousel-section";
+import ServiceCard from "@/components/common/service-card";
+import { CarouselItem } from "@/components/ui/carousel";
+import { IServiceCard } from "@/models/data-config/card.model";
 
-const CardConfig: ICardService = {
+const CardConfig: IServiceCard = {
   imagePath: "/images/builder-man.jpg",
   imageAlt: "builder-main",
   rate: 4.94,
@@ -17,34 +17,16 @@ const CardConfig: ICardService = {
 
 const FourthSection = () => {
   return (
-    <div className="min-h-screen gap-8 flex flex-col justify-center items-center">
-      <div className="container">
-        <h2 className="text-2xl text-blue-900 font-extrabold pb-12">
-          Popular home projects
-        </h2>
-        <div>
-          <CarouselDots>
-            <CarouselContent>
-              <CarouselItem className="basis-1/3">
-                <CardService data={CardConfig} />
-              </CarouselItem>
-              <CarouselItem className="basis-1/3">
-                <CardService data={CardConfig} />
-              </CarouselItem>
-              <CarouselItem className="basis-1/3">
-                <CardService data={CardConfig} />
-              </CarouselItem>
-              <CarouselItem className="basis-1/3">
-                <CardService data={CardConfig} />
-              </CarouselItem>
-              <CarouselItem className="basis-1/3">
-                <CardService data={CardConfig} />
-              </CarouselItem>
-            </CarouselContent>
-          </CarouselDots>
-        </div>
-      </div>
-    </div>
+    <CarouselSection title="Popular home projects">
+      {Array.from({ length: 8 }, (_, i) => (
+        <CarouselItem
+          key={i++}
+          className="basis-full sm:basis-1/2 lg:basis-1/3 flex justify-center"
+        >
+          <ServiceCard data={CardConfig} />
+        </CarouselItem>
+      ))}
+    </CarouselSection>
   );
 };
 

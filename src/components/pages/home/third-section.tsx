@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ColoredSection from "@/components/common/colored-section";
 
 const imageArray = [
   {
@@ -45,22 +46,23 @@ const imageArray = [
 
 const ThirdSection = () => {
   return (
-    <div className="bg-gray-700 py-[72px]">
-      <div className="container grid grid-cols-4 gap-y-8 gap-x-7 justify-center">
-        {imageArray.map((data, index) => (
-          <div key={index} className="flex justify-center items-center">
-            <Image
-              src={data.path}
-              alt={`Image ${index + 1}`}
-              className="object-contain"
-              width={data.width}
-              height={data.height}
-              priority={index === 0} // Set priority for the first image to load faster
-            />
-          </div>
-        ))}
-      </div>
-    </div>
+    <ColoredSection
+      wrapClasses="py-[72px]"
+      innerClasses="grid grid-cols-4 gap-y-8 gap-x-7 justify-center"
+    >
+      {imageArray.map((data, index) => (
+        <div key={index} className="flex justify-center items-center">
+          <Image
+            src={data.path}
+            alt={`Image ${index + 1}`}
+            className="object-contain"
+            width={data.width}
+            height={data.height}
+            priority={index === 0} // Set priority for the first image to load faster
+          />
+        </div>
+      ))}
+    </ColoredSection>
   );
 };
 

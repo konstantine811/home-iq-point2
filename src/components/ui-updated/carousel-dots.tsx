@@ -42,22 +42,26 @@ const CarouselDots = ({ children }: Props) => {
   return (
     <Carousel setApi={setApi}>
       {children}
-      <div className="flex justify-center gap-4 mt-10">
+      <div className="flex justify-center mt-10 ">
         {dots.map((dotIndex) => (
-          <span
+          <div
             key={dotIndex}
-            className={`h-[10px] w-[10px] transition-all rounded-full mx-1 cursor-pointer ${
-              activeIndex === dotIndex ? "bg-blue-900" : "bg-gray-300"
-            }`}
+            className="p-3 flex justify-center rounded-full cursor-pointer"
             onClick={() => {
               // Scroll to the specific slide
               api?.scrollTo(dotIndex);
             }}
-          ></span>
+          >
+            <span
+              className={`h-[10px] w-[10px] transition-all rounded-full   ${
+                activeIndex === dotIndex ? "bg-blue-900" : "bg-gray-300"
+              }`}
+            ></span>
+          </div>
         ))}
       </div>
-      <CarouselPrevious className="hover:bg-red-100  custom-carousel-arrow" />
-      <CarouselNext className="hover:bg-red-100  custom-carousel-arrow" />
+      <CarouselPrevious className="hover:bg-red-100  custom-carousel-arrow hidden sm:flex" />
+      <CarouselNext className="hover:bg-red-100  custom-carousel-arrow hidden sm:flex" />
     </Carousel>
   );
 };

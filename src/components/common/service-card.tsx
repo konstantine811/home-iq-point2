@@ -7,13 +7,13 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import SmoothedStar from "../svg-icons/smoothed-star";
-import { ICardService } from "@/models/data-config/card.model";
+import { IServiceCard } from "@/models/data-config/card.model";
 
 interface Props {
-  data: ICardService;
+  data: IServiceCard;
 }
 
-const CardService = ({
+const ServiceCard = ({
   data: { imagePath, imageAlt, rate, countRated, description, btnPrice },
 }: Props) => {
   return (
@@ -28,17 +28,19 @@ const CardService = ({
           className="rounded-t-xl object-cover h-full w-full"
         />
       </CardHeader>
-      <CardContent className="p-4">
+      <CardContent className="p-6">
         {/* Rating and Reviews */}
-        <div className="flex items-center mb-2 space-x-1">
+        <div className="flex items-center mb-2">
           <SmoothedStar />
-          <span className="text-sm text-blue-800 font-semibold">{rate}</span>
+          <span className="text-sm text-blue-800 ml-2 mr-0.5 font-semibold">
+            {rate}
+          </span>
           <span className="text-sm text-gray-600">{countRated}</span>
         </div>
         {/* Description */}
         <p className="text-blue-900 font-semibold">{description}</p>
       </CardContent>
-      <CardFooter className="px-4 pb-4">
+      <CardFooter className="px-6 pb-4">
         {/* CTA Button */}
         <Button
           variant="outline"
@@ -51,4 +53,4 @@ const CardService = ({
   );
 };
 
-export default CardService;
+export default ServiceCard;

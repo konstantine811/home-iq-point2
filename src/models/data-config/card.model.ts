@@ -1,4 +1,4 @@
-export interface ICardService {
+export interface IServiceCard {
   imagePath: string;
   imageAlt: string;
   rate: number;

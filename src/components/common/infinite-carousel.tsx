@@ -9,7 +9,7 @@ interface Props {
   delay?: number;
 }
 
-const CarouselInfinite = ({ children, delay = 0 }: Props) => {
+const InfiniteCarousel = ({ children, delay = 0 }: Props) => {
   const FAST_DURATION = 25;
   const SLOW_DURATION = 75;
 
@@ -68,4 +68,4 @@ const CarouselInfinite = ({ children, delay = 0 }: Props) => {
   );
 };
 
-export default CarouselInfinite;
+export default InfiniteCarousel;
