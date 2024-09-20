@@ -15,6 +15,10 @@
   }
 }
 
+html {
+  scroll-behavior: auto; /* Or avoid smooth scroll entirely */
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
