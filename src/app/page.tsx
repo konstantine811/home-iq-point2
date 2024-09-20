@@ -3,6 +3,7 @@ import EightSection from "@/components/pages/home/eigth-section";
 import FifthSection from "@/components/pages/home/fifth-section";
 import FourthSection from "@/components/pages/home/fourth-section";
 import MainSection from "@/components/pages/home/main-section";
+import NinthSection from "@/components/pages/home/ninth-section";
 import SecondSection from "@/components/pages/home/second-section";
 import SeventhSection from "@/components/pages/home/seventh-section";
 import SixthSection from "@/components/pages/home/sixth-section";
@@ -22,6 +23,7 @@ export default function Home() {
       <SixthSection />
       <SeventhSection />
       <EightSection />
+      <NinthSection />
     </>
   );
 }
