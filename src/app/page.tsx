@@ -1,5 +1,6 @@
 import Header from "@/components/common/header";
 import EightSection from "@/components/pages/home/eigth-section";
+import ElevenSection from "@/components/pages/home/eleven-section";
 import FifthSection from "@/components/pages/home/fifth-section";
 import FourthSection from "@/components/pages/home/fourth-section";
 import MainSection from "@/components/pages/home/main-section";
@@ -26,6 +27,7 @@ export default function Home() {
       <EightSection />
       <NinthSection />
       <TenSection />
+      <ElevenSection />
     </>
   );
 }
