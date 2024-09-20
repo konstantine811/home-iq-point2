@@ -18,14 +18,14 @@ const ServiceCard = ({
 }: Props) => {
   return (
     <Card className="w-full rounded-xl shadow-none max-w-[385px]">
-      <CardHeader className="p-0 mb-4 h-[269px] relative">
+      <CardHeader className="p-0 mb-4 h-[269px] relative overflow-hidden">
         {/* Image */}
         <Image
           src={imagePath}
           alt={imageAlt}
           width={386}
           height={269}
-          className="rounded-t-xl object-cover h-full w-full"
+          className="rounded-t-xl object-cover absolute"
         />
       </CardHeader>
       <CardContent className="p-6">

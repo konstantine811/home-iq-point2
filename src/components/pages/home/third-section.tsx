@@ -55,7 +55,7 @@ const ThirdSection = () => {
           <Image
             src={data.path}
             alt={`Image ${index + 1}`}
-            className="object-contain"
+            className="object-contain h-full w-auto"
             width={data.width}
             height={data.height}
             priority={index === 0} // Set priority for the first image to load faster

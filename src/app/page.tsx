@@ -10,6 +10,7 @@ import SeventhSection from "@/components/pages/home/seventh-section";
 import SixthSection from "@/components/pages/home/sixth-section";
 import TenSection from "@/components/pages/home/ten-section";
 import ThirdSection from "@/components/pages/home/third-section";
+import TwelveSection from "@/components/pages/home/twelve-section";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
       <NinthSection />
       <TenSection />
       <ElevenSection />
+      <TwelveSection />
     </>
   );
 }

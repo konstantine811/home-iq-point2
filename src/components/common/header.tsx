@@ -12,12 +12,12 @@ const Header = () => {
             className="text-black flex items-center justify-center hover:text-black h-[48px] w-[140px] rounded-full bg-gray-700"
           ></a>
         </div>
-        <div className="flex flex-wrap items-center">
+        <div className="flex gap-6 sm:gap-12 flex-wrap items-center">
           {NavHeaderLinks.map((link) => (
             <a
               key={link}
               href="#"
-              className="text-black font-semibold text-sm hover:text-black/50 min-w-[132px] text-center"
+              className="text-black font-semibold text-sm hover:text-black/50 max-w-[132px] text-center"
             >
               {link}
             </a>

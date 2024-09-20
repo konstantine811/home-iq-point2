@@ -66,7 +66,7 @@ const ElevenSection = () => {
                 alt={`Room ${index + 1}`}
                 width={500}
                 height={500}
-                className={`w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 `}
+                className={`object-cover transition-transform duration-300 group-hover:scale-105 `}
                 priority={index < 2} // Load first two images with priority for performance
               />
             </div>

@@ -11,7 +11,7 @@ const MainSection = () => {
         <div className="absolute left-0 top-0 z-10 w-full h-full overflow-hidden xl:rounded-2xl after:bg-black/65 after:w-full after:h-full after:absolute">
           <Image
             alt="main-background"
-            className="h-full w-full object-cover "
+            className="w-full object-cover "
             src="/bg/main-bg.jpg"
             fill
             priority

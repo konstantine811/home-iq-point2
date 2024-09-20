@@ -1,7 +1,7 @@
 import ColoredSection from "@/components/common/colored-section";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MapPin } from "lucide-react";
+import RedButton from "./red-button";
 
 const NinthSection = () => {
   return (
@@ -37,9 +37,7 @@ const NinthSection = () => {
 
         {/* Send Button */}
         <div className="w-full xl:w-auto">
-          <Button className="min-w-40 w-full bg-red-700 hover:bg-red-700 transition-all hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-opacity-50 font-extrabold">
-            Send
-          </Button>
+          <RedButton title="Send"></RedButton>
         </div>
       </div>
     </ColoredSection>
