@@ -7,6 +7,7 @@ import NinthSection from "@/components/pages/home/ninth-section";
 import SecondSection from "@/components/pages/home/second-section";
 import SeventhSection from "@/components/pages/home/seventh-section";
 import SixthSection from "@/components/pages/home/sixth-section";
+import TenSection from "@/components/pages/home/ten-section";
 import ThirdSection from "@/components/pages/home/third-section";
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
       <SeventhSection />
       <EightSection />
       <NinthSection />
+      <TenSection />
     </>
   );
 }

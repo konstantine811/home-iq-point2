@@ -30,7 +30,7 @@ const config: Config = {
         "main-bg": "url('/assets/bg/main-bg.jpg')",
       },
       fontSize: {
-        "2xl": "2rem",
+        "3xl": "2rem",
       },
       colors: {
         yellow: {
