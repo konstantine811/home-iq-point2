@@ -6,12 +6,12 @@ import useMeasure from "react-use-measure";
 
 interface Props {
   children: React.ReactNode;
-  delay?: number;
+  count: number;
 }
 
-const InfiniteCarousel = ({ children, delay = 0 }: Props) => {
-  const FAST_DURATION = 25;
-  const SLOW_DURATION = 75;
+const InfiniteCarousel = ({ children, count }: Props) => {
+  const FAST_DURATION = 5 * count;
+  const SLOW_DURATION = 25 * count;
 
   const [duration, setDuration] = useState(FAST_DURATION);
   const [ref, { width }] = useMeasure();
@@ -45,7 +45,7 @@ const InfiniteCarousel = ({ children, delay = 0 }: Props) => {
     }
 
     return controls?.stop;
-  }, [rerender, xTranslation, duration, width, mustFinish, delay]);
+  }, [rerender, xTranslation, duration, width, mustFinish]);
   return (
     <div className="relative overflow-hidden h-full w-full">
       <motion.div

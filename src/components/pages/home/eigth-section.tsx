@@ -12,14 +12,14 @@ const EightSection = () => {
         </h2>
       </div>
       <div className="h-[216px] w-full mb-4">
-        <InfiniteCarousel>
+        <InfiniteCarousel count={ReviewCardItems.length}>
           {ReviewCardItems.map((data, index) => {
             return <ReviewCard key={index} {...data} />;
           })}
         </InfiniteCarousel>
       </div>
       <div className="h-[216px] w-full">
-        <InfiniteCarousel>
+        <InfiniteCarousel count={ReviewCardItems2.length}>
           {ReviewCardItems2.map((data, index) => {
             return <ReviewCard key={index} {...data} />;
           })}
