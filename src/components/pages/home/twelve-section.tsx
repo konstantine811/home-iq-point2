@@ -4,7 +4,7 @@ import RedButton from "./red-button";
 
 const TwelveSection = () => {
   return (
-    <ColoredSection wrapClasses="min-h-screen flex flex-col justify-center py-8 lg:py-16">
+    <ColoredSection wrapClasses="grow flex flex-col justify-center py-8 lg:py-16">
       <div className="flex flex-col lg:flex-row lg:gap-8 items-center justify-between w-full">
         {/* Left Text Section */}
         <div className="lg:w-1/2 flex flex-col justify-center">

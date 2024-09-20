@@ -1,3 +1,4 @@
+import Footer from "@/components/common/footer";
 import Header from "@/components/common/header";
 import EightSection from "@/components/pages/home/eigth-section";
 import ElevenSection from "@/components/pages/home/eleven-section";
@@ -29,7 +30,10 @@ export default function Home() {
       <NinthSection />
       <TenSection />
       <ElevenSection />
-      <TwelveSection />
+      <div className="min-h-screen flex flex-col">
+        <TwelveSection />
+        <Footer />
+      </div>
     </>
   );
 }
