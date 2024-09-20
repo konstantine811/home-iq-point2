@@ -19,6 +19,11 @@ html {
   scroll-behavior: auto; /* Or avoid smooth scroll entirely */
 }
 
+html,
+body {
+  overscroll-behavior: contain; /* Prevent bounce-back */
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
