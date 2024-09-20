@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 
 const ElevenSection = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isCursorVisible, setIsCursorVisible] = useState(true);
+  const [isCursorVisible, setIsCursorVisible] = useState(false);
   const images = [
     "/images/appartment_1.jpg",
     "/images/appartment_2.jpg",

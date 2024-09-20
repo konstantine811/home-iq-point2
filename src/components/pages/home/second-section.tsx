@@ -14,7 +14,7 @@ const SecondSection = () => {
             <div className="grow flex items-end mb-4 w-14 h-14">
               <SvgComponent />
             </div>
-            <p className="text-blue-900 font-semibold text-sm text-center">
+            <p className="text-blue-900 font-semibold text-sm text-center pb-2">
               {data.title}
             </p>
           </div>
