@@ -143,12 +143,9 @@ const MobileProjectSteps = () => {
           <ScrolledCard>
             <CardItems>
               {SVG_PATH_CONFIG?.map((data, index) => {
-                const SvgComponent = dynamic(data.path);
                 return (
                   <SingleItem key={index} title={data.title}>
-                    <div className="w-[40px] h-[40px]">
-                      <SvgComponent />
-                    </div>
+                    <div className="w-[40px] h-[40px]">{data.icon}</div>
                   </SingleItem>
                 );
               })}
