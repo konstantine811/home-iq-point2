@@ -3,7 +3,7 @@
 import FullScreenSection from "@/components/common/full-screen-section";
 import Zoom from "@/components/svg-icons/zoom";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const ElevenSection = () => {
@@ -25,6 +25,13 @@ const ElevenSection = () => {
     "/images/appartment_13.jpg",
     "/images/appartment_7.jpg",
   ];
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => setIsCursorVisible(false));
+    return () => {
+      window.removeEventListener("scroll", () => setIsCursorVisible(false));
+    };
+  });
   return (
     <FullScreenSection title="Finished work">
       <>
