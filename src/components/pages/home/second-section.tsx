@@ -1,3 +1,5 @@
+"use client";
+
 import { SVG_PATH_CONFIG } from "@/configs/cards";
 import dynamic from "next/dynamic";
 
