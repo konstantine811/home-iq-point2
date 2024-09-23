@@ -51,7 +51,7 @@ const ProjectSteps = () => {
         <div className="grid grid-cols-3 place-items-center gap-10 pb-6">
           <ScrolledCard>
             <CardItems>
-              {SVG_PATH_CONFIG.map((data, index) => {
+              {SVG_PATH_CONFIG?.map((data, index) => {
                 const SvgComponent = dynamic(data.path);
                 return (
                   <SingleItem key={index} title={data.title}>
@@ -102,7 +102,7 @@ const MobileProjectSteps = () => {
         <CarouselItem className="basis-full flex flex-col justify-center items-center gap-6">
           <ScrolledCard>
             <CardItems>
-              {SVG_PATH_CONFIG.map((data, index) => {
+              {SVG_PATH_CONFIG?.map((data, index) => {
                 const SvgComponent = dynamic(data.path);
                 return (
                   <SingleItem key={index} title={data.title}>
