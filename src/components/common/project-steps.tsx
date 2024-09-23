@@ -4,7 +4,6 @@ import { User, Building, Flag, MapPin, MessageSquare } from "lucide-react";
 import ScrolledCard from "./scrolled-card";
 import CardItems from "@/components/common/card-items";
 
-import { SVG_PATH_CONFIG } from "@/configs/cards";
 import dynamic from "next/dynamic";
 import SingleItem from "./items-components/single-item";
 import CoupleItems from "./items-components/couple-items";
@@ -14,6 +13,7 @@ import ArrayStepper from "./array-stepper";
 import CarouselDots from "../ui-updated/carousel-dots";
 import { CarouselContent, CarouselItem } from "../ui/carousel";
 import Stepper from "./stepper";
+import Bathroom from "../svg-icons/bathroom";
 
 const CoupleCardItems = [
   {
@@ -44,6 +44,49 @@ const CoupleCardItems = [
   },
 ];
 
+export const SVG_PATH_CONFIG = [
+  {
+    icon: <Bathroom />,
+    title: "Bathroom Remodel",
+  },
+  // {
+  //   path: () => import("@/assets/svg/kitchen.svg"),
+  //   title: "Kitchen Remodel",
+  // },
+  // {
+  //   path: () => import("@/assets/svg/gutter.svg"),
+  //   title: "Gutter",
+  // },
+  // {
+  //   path: () => import("@/assets/svg/home-security.svg"),
+  //   title: "Home Security",
+  // },
+  // {
+  //   path: () => import("@/assets/svg/hvac.svg"),
+  //   title: "HVAC",
+  // },
+  // {
+  //   path: () => import("@/assets/svg/roofing.svg"),
+  //   title: "Roofing",
+  // },
+  // {
+  //   path: () => import("@/assets/svg/windows.svg"),
+  //   title: "Windows",
+  // },
+  // {
+  //   path: () => import("@/assets/svg/bath-to-shower.svg"),
+  //   title: "Bath to Shower",
+  // },
+  // {
+  //   path: () => import("@/assets/svg/walk-in-tubs.svg"),
+  //   title: "Walk-in Tubs",
+  // },
+  // {
+  //   path: () => import("@/assets/svg/walk-in-shower.svg"),
+  //   title: "Walk-in Shower",
+  // },
+];
+
 const ProjectSteps = () => {
   return (
     <>
@@ -52,12 +95,9 @@ const ProjectSteps = () => {
           <ScrolledCard>
             <CardItems>
               {SVG_PATH_CONFIG?.map((data, index) => {
-                const SvgComponent = dynamic(data.path);
                 return (
                   <SingleItem key={index} title={data.title}>
-                    <div className="w-[40px] h-[40px]">
-                      <SvgComponent />
-                    </div>
+                    <div className="w-[40px] h-[40px]">{data.icon}</div>
                   </SingleItem>
                 );
               })}
