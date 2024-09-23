@@ -8,13 +8,6 @@
   --red-700: #fc4921;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 html {
   scroll-behavior: auto; /* Or avoid smooth scroll entirely */
 }
