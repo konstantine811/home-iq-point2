@@ -58,7 +58,7 @@ const ElevenSection = () => {
           onMouseMove={(event) => {
             setPosition({ x: event.clientX, y: event.clientY });
           }}
-          onMouseEnter={() => setIsCursorVisible(true)}
+          onMouseOver={() => setIsCursorVisible(true)}
           onMouseLeave={() => setIsCursorVisible(false)}
         >
           {images.map((src, index) => (
