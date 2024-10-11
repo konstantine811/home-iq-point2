@@ -11,6 +11,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        scrolling: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
+      animation: {
+        scrolling: "scrolling 10s linear infinite",
+      },
       container: {
         center: true,
         padding: "1rem", // Adds padding around the container

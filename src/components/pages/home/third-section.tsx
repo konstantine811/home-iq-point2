@@ -1,7 +1,11 @@
 import Image from "next/image";
 import ColoredSection from "@/components/common/colored-section";
+import { IImageConfig } from "@/models/data-config/image-config.model";
+import InfiniteCarousel from "@/components/common/infinite-carousel";
+import { splitArray } from "@/utils/array";
+import InfiniteBannerCarousel from "@/components/common/infinite-banner-carousel";
 
-const imageArray = [
+const imageArray: IImageConfig[] = [
   {
     width: 205,
     height: 59,
@@ -45,23 +49,29 @@ const imageArray = [
 ];
 
 const ThirdSection = () => {
+  const { firstHalf, secondHalf } = splitArray<IImageConfig>(imageArray);
   return (
-    <ColoredSection
-      wrapClasses="py-[72px]"
-      innerClasses="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-7 justify-center"
-    >
-      {imageArray.map((data, index) => (
-        <div key={index} className="flex justify-center items-center">
-          <Image
-            src={data.path}
-            alt={`Image ${index + 1}`}
-            className="object-contain h-full w-auto"
-            width={data.width}
-            height={data.height}
-            priority={index === 0} // Set priority for the first image to load faster
-          />
-        </div>
-      ))}
+    <ColoredSection wrapClasses="py-[12px] md:py-[72px]">
+      <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-7 justify-center">
+        {imageArray.map((data, index) => (
+          <div key={index} className="flex justify-center items-center">
+            <Image
+              src={data.path}
+              alt={`Image ${index + 1}`}
+              className="object-contain h-full w-auto"
+              width={data.width}
+              height={data.height}
+              priority={index === 0} // Set priority for the first image to load faster
+            />
+          </div>
+        ))}
+      </div>
+      <div className="md:hidden flex gap-4 items-center w-full">
+        <InfiniteBannerCarousel height={30} images={firstHalf} />
+      </div>
+      <div className="md:hidden flex gap-4 items-center w-full">
+        <InfiniteBannerCarousel height={30} images={secondHalf} />
+      </div>
     </ColoredSection>
   );
 };
