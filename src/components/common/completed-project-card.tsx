@@ -15,9 +15,9 @@ const CompletedProjectCard = ({
   data: { description, icon, title, additionalTitle },
   index,
 }: Props) => {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState<number | string>(0);
   const ref = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(ref, { margin: "200px", once: false });
+  const isInView = useInView(ref, { margin: "200px", once: true });
   const spring = useSpring(0, {
     stiffness: 50, // зменшуємо жорсткість
     damping: 20, // збільшуємо демпфування
@@ -27,14 +27,10 @@ const CompletedProjectCard = ({
 
   spring.on("change", (value) => {
     const formattedValue = value.toFixed(countDecimalPlaces(title));
-    setValue(Number(formattedValue));
+    setValue(formattedValue);
   });
   useEffect(() => {
-    if (isInView) {
-      spring.set(title); // встановлюємо нове значення для анімації при вході у в'юпорт
-    } else {
-      spring.set(0); // повертаємо до початкового стану (за бажанням)
-    }
+    spring.set(title);
   }, [isInView, spring, title]);
   // Налаштування для плавного зʼявлення картки
   const cardVariants = {
