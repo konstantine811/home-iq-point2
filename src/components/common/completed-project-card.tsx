@@ -19,10 +19,8 @@ const CompletedProjectCard = ({
   const ref = useRef<HTMLDivElement | null>(null);
   const isInView = useInView(ref, { margin: "200px", once: true });
   const spring = useSpring(0, {
-    stiffness: 50, // зменшуємо жорсткість
-    damping: 20, // збільшуємо демпфування
-    mass: 1, // залишаємо масу 1
-    duration: 0.3, // тривалість в секундах
+    bounce: 0, // амплітуда
+    duration: 2000, // тривалість в секундах
   });
 
   spring.on("change", (value) => {
