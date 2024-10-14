@@ -15,3 +15,10 @@ export interface IReviewCard {
   countStar: number;
   description: string;
 }
+
+export interface ICardPriceIcon {
+  icon: React.ReactNode;
+  title: number;
+  additionalTitle?: string;
+  description: string;
+}

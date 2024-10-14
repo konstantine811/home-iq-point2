@@ -1,27 +1,30 @@
 import ColoredSection from "@/components/common/colored-section";
 import CompletedProjectCard from "@/components/common/completed-project-card";
 import Users from "@/components/svg-icons/users";
+import { ICardPriceIcon } from "@/models/data-config/card.model";
 import { CheckCircle, Star, Trophy } from "lucide-react";
 
-const CardConfig = [
+const CardConfig: ICardPriceIcon[] = [
   {
     icon: <CheckCircle className="text-red-700" size={24} />,
-    title: "65,224",
+    title: 65.224,
     description: "Completed projects",
   },
   {
     icon: <Star className="text-red-700" size={24} />,
-    title: "4.95",
+    title: 4.95,
     description: "Average rating",
   },
   {
     icon: <Users />,
-    title: "200+",
+    title: 200,
+    additionalTitle: "+",
     description: "Number of contractors",
   },
   {
     icon: <Trophy className="text-red-700" size={24} />,
-    title: "20+",
+    title: 20,
+    additionalTitle: "+",
     description: "Years on the market",
   },
 ];
@@ -34,12 +37,7 @@ const FifthSection = () => {
       </h2>
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 justify-between">
         {CardConfig.map((config, index) => (
-          <CompletedProjectCard
-            key={index}
-            icon={config.icon}
-            title={config.title}
-            description={config.description}
-          />
+          <CompletedProjectCard index={index} key={index} data={config} />
         ))}
       </div>
     </ColoredSection>
