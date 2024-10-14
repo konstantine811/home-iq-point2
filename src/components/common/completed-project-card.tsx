@@ -28,7 +28,9 @@ const CompletedProjectCard = ({
     setValue(formattedValue);
   });
   useEffect(() => {
-    spring.set(title);
+    if (isInView) {
+      spring.set(title);
+    }
   }, [isInView, spring, title]);
   // Налаштування для плавного зʼявлення картки
   const cardVariants = {
