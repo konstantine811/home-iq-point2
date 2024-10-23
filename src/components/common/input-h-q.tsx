@@ -1,7 +1,6 @@
 "use client";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 
 interface Props {
   type: string;
@@ -12,7 +11,7 @@ interface Props {
 
 const InputHQ = ({ beforeChildren, type, placeholder, className }: Props) => {
   return (
-    <motion.div whileTap={{ scale: 0.97 }} className={cn(className)}>
+    <div className={cn(className)}>
       {beforeChildren}
       <Input
         type={type}
@@ -21,7 +20,7 @@ const InputHQ = ({ beforeChildren, type, placeholder, className }: Props) => {
           beforeChildren && "pl-10"
         } pr-10 border-gray-400 text-blue-900 shadow-none placeholder-gray-900 h-12`}
       />
-    </motion.div>
+    </div>
   );
 };
 
