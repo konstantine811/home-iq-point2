@@ -1,13 +1,13 @@
 import Footer from "@/components/common/footer";
 import Header from "@/components/common/header";
-import EightSection from "@/components/pages/home/eigth-section";
+import EightSGoogleReviews from "@/components/pages/home/eigth-s-google-reviews";
 import ElevenSection from "@/components/pages/home/eleven-section";
 import FifthSection from "@/components/pages/home/fifth-section";
 import FourthSection from "@/components/pages/home/fourth-section";
 import MainSection from "@/components/pages/home/main-section";
 import NinthSection from "@/components/pages/home/ninth-section";
 import SecondSection from "@/components/pages/home/second-section";
-import SeventhSection from "@/components/pages/home/seventh-section";
+import SeventhSHowItWorks from "@/components/pages/home/seventh-s-how-it-works";
 import SixthSection from "@/components/pages/home/sixth-section";
 import TenSection from "@/components/pages/home/ten-section";
 import ThirdSection from "@/components/pages/home/third-section";
@@ -25,8 +25,8 @@ export default function Home() {
       <FourthSection />
       <FifthSection />
       <SixthSection />
-      <SeventhSection />
-      <EightSection />
+      <SeventhSHowItWorks />
+      <EightSGoogleReviews />
       <NinthSection />
       <TenSection />
       <ElevenSection />

@@ -2,17 +2,29 @@ import { ThemeColors } from "@/configs/theme-colors";
 import { Star } from "lucide-react"; // Icons from Lucide React
 import Image from "next/image";
 import BadgeCheck from "@/assets/svg/badge-check.svg";
+import { cn } from "@/lib/utils";
 
 interface Props {
   labelColor: ThemeColors;
   title: string;
   countStar: number;
   description: string;
+  className?: string;
 }
 
-const ReviewCard = ({ labelColor, countStar, description, title }: Props) => {
+const ReviewCard = ({
+  labelColor,
+  countStar,
+  description,
+  title,
+  className,
+}: Props) => {
   return (
-    <div className="bg-white border border-gray-400 rounded-lg p-6 min-w-[514px]">
+    <div
+      className={cn(
+        `bg-white border border-gray-400 rounded-lg p-6 max-w-[514px] ${className}`
+      )}
+    >
       <div className="flex gap-4">
         {/* Left Section - Avatar */}
         <div className="relative">

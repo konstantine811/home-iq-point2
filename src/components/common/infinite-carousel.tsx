@@ -1,74 +1,51 @@
 "use client";
 
-import { animate, motion, useMotionValue } from "framer-motion";
-import { useEffect, useState } from "react";
-import useMeasure from "react-use-measure";
+import { useAnimationFrame } from "framer-motion";
+import { useRef, useState } from "react";
 
 interface Props {
   children: React.ReactNode;
-  count: number;
+  isPlaying?: boolean;
 }
 
-const InfiniteCarousel = ({ children, count }: Props) => {
-  const FAST_DURATION = 5 * count;
-  const SLOW_DURATION = 25 * count;
+const InfiniteCarousel = ({ children, isPlaying = true }: Props) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const xPosition = useRef(0);
+  const [isHovered, setIsHovered] = useState(false);
 
-  const [duration, setDuration] = useState(FAST_DURATION);
-  const [ref, { width }] = useMeasure();
+  const normalSpeed = 0.05;
+  const slowSpeed = 0.01; // Adjust this to your preferred slower speed
 
-  const xTranslation = useMotionValue(0);
+  useAnimationFrame((_, delta) => {
+    if (!isPlaying) return; // Stop animation if not playing
 
-  const [mustFinish, setMustFinish] = useState(false);
-  const [rerender, setRerender] = useState(false);
+    if (containerRef.current) {
+      const container = containerRef.current;
+      const speed = isHovered ? slowSpeed : normalSpeed; // Use slower speed if hovered
+      xPosition.current -= speed * delta;
 
-  useEffect(() => {
-    if (width > 0) {
-      let controls;
-      const finalPosition = -width / 2;
-      console.log("width", width);
-      console.log("count", count);
-      console.log("finalPosition", finalPosition);
-
-      if (mustFinish) {
-        controls = animate(xTranslation, [xTranslation.get(), finalPosition], {
-          ease: "linear",
-          duration: duration * (1 - xTranslation.get() / finalPosition),
-          onComplete: () => {
-            setMustFinish(false);
-            setRerender(!rerender);
-          },
-        });
-      } else {
-        controls = animate(xTranslation, [0, finalPosition], {
-          ease: "linear",
-          duration: duration,
-          repeat: Infinity,
-          repeatType: "loop",
-          repeatDelay: 0,
-        });
+      // Loop back to start when halfway through the content
+      if (Math.abs(xPosition.current) >= container.scrollWidth / 2) {
+        xPosition.current = 0;
       }
-      return controls?.stop;
+
+      container.style.transform = `translateX(${xPosition.current}px)`;
     }
-  }, [rerender, xTranslation, duration, width, mustFinish]);
+  });
+
   return (
-    <div className="relative overflow-hidden h-full w-full">
-      <motion.div
-        className="absolute flex gap-4 w-full"
-        style={{ x: xTranslation }}
-        ref={ref}
-        onHoverStart={() => {
-          setMustFinish(true);
-          setDuration(SLOW_DURATION);
-        }}
-        onHoverEnd={() => {
-          setMustFinish(true);
-          setDuration(FAST_DURATION);
-        }}
+    <>
+      <div
+        className="overflow-hidden w-full relative before:absolute before:inset-0 before:bg-gradient-to-r before:from-gray-700 before:to-transparent before:z-10 before:w-20 before:left-0 after:absolute after:inset-0 after:bg-gradient-to-l after:from-gray-700 after:to-transparent after:z-5 after:w-20 after:left-[calc(100%-5rem)]"
+        onMouseEnter={() => setIsHovered(true)} // Set hover state on enter
+        onMouseLeave={() => setIsHovered(false)} // Reset hover state on leave
       >
-        {children}
-        {children}
-      </motion.div>
-    </div>
+        <div ref={containerRef} className="flex w-max">
+          {children}
+          {children}
+        </div>
+      </div>
+    </>
   );
 };
 
