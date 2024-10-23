@@ -11,7 +11,7 @@ const InputGroup = ({ className }: Props) => {
     <div
       className={`${className} w-full flex flex-col md:flex-row md:items-center md:justify-center p-2 md:bg-white rounded-xl gap-2 md:gap-0`}
     >
-      <div className="md:grid bg-white md:bg-transparent grid-cols-3 border border-none rounded-xl md:rounded-full overflow-hidden h-full w-full">
+      <div className="md:grid bg-white md:bg-transparent md:grid-cols-3 border border-none rounded-xl md:rounded-full overflow-hidden h-full w-full">
         {/* First input */}
         <Input
           className="border-none col-span-2 h-14 md:h-full  text-gray-900 placeholder:text-gray-900 text-xl rounded-none  flex-1 focus-visible:ring-0 py-3 pr-3 pl-6 md:py-0 md:pl-[60px] focus:ring-0 focus:outline-none"
