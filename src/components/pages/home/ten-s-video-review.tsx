@@ -1,9 +1,9 @@
 import FullScreenSection from "@/components/common/full-screen-section";
 import TextBox from "@/components/common/text-box";
 import { ThemeColors } from "@/configs/theme-colors";
-import { Clock, DollarSign, Play, Wallet } from "lucide-react";
+import { Clock, Wallet } from "lucide-react";
 
-const TenSection = () => {
+const TenSVideoReview = () => {
   return (
     <FullScreenSection title="Video review">
       <div className="flex justify-between items-center flex-wrap border border-gray-400 rounded-xl gap-2 xl:gap-16">
@@ -54,6 +54,7 @@ const TenSection = () => {
         <div className="xl:max-w-[504px] w-full xl:h-[504px]">
           <video
             controls
+            playsInline
             className="rounded-lg shadow-lg object-cover w-full  h-full"
           >
             <source src="/video/builder-bathroom.mp4" type="video/mp4" />
@@ -65,4 +66,4 @@ const TenSection = () => {
   );
 };
 
-export default TenSection;
+export default TenSVideoReview;

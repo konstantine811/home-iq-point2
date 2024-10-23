@@ -9,7 +9,7 @@ import NinthSection from "@/components/pages/home/ninth-section";
 import SecondSection from "@/components/pages/home/second-section";
 import SeventhSHowItWorks from "@/components/pages/home/seventh-s-how-it-works";
 import SixthSection from "@/components/pages/home/sixth-section";
-import TenSection from "@/components/pages/home/ten-section";
+import TenSVideoReview from "@/components/pages/home/ten-s-video-review";
 import ThirdSection from "@/components/pages/home/third-section";
 import TwelveSection from "@/components/pages/home/twelve-section";
 
@@ -28,7 +28,7 @@ export default function Home() {
       <SeventhSHowItWorks />
       <EightSGoogleReviews />
       <NinthSection />
-      <TenSection />
+      <TenSVideoReview />
       <EleventhSFinishedWork />
       <div className="md:min-h-screen flex flex-col">
         <TwelveSection />
