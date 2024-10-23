@@ -7,7 +7,7 @@ const TenSVideoReview = () => {
   return (
     <FullScreenSection title="Video review">
       <div className="flex justify-between items-center flex-wrap border border-gray-400 rounded-xl gap-2 xl:gap-16">
-        <div className="max-w-[624px] w-full pt-12 pb-4 xl:py-12 pl-12">
+        <div className="max-w-[624px] w-full pt-12 pb-4 px-5 xl:py-12 xl:pl-12">
           {/* Left Section - Text and Info */}
           <div className="space-y-4">
             {/* Badges */}
