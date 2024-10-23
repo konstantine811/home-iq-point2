@@ -19,7 +19,7 @@ const InputHQ = ({ beforeChildren, type, placeholder, className }: Props) => {
         placeholder={placeholder}
         className={`${
           beforeChildren && "pl-10"
-        } pr-10 border-gray-400 text-blue-900 shadow-none placeholder-gray-900 h-12 text-sm`}
+        } pr-10 border-gray-400 border-2 text-blue-900 shadow-none placeholder-gray-900 h-12 text-[16px] bg-white`}
       />
     </motion.div>
   );
