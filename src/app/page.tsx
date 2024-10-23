@@ -1,7 +1,7 @@
 import Footer from "@/components/common/footer";
 import Header from "@/components/common/header";
 import EightSGoogleReviews from "@/components/pages/home/eigth-s-google-reviews";
-import ElevenSection from "@/components/pages/home/eleven-section";
+import EleventhSFinishedWork from "@/components/pages/home/eleventh-s-finished-work";
 import FifthSection from "@/components/pages/home/fifth-section";
 import FourthSection from "@/components/pages/home/fourth-section";
 import MainSection from "@/components/pages/home/main-section";
@@ -29,7 +29,7 @@ export default function Home() {
       <EightSGoogleReviews />
       <NinthSection />
       <TenSection />
-      <ElevenSection />
+      <EleventhSFinishedWork />
       <div className="md:min-h-screen flex flex-col">
         <TwelveSection />
         <Footer />

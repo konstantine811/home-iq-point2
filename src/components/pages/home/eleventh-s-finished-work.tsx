@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const ElevenSection = () => {
+const EleventhSFinishedWork = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isCursorVisible, setIsCursorVisible] = useState(false);
   const images = [
@@ -54,7 +54,7 @@ const ElevenSection = () => {
           <Zoom />
         </motion.div>
         <div
-          className="grid grid-rows-4  grid-cols-5 cursor-none"
+          className="grid grid-cols-2 md:grid-rows-4  md:grid-cols-5 cursor-none"
           onMouseMove={(event) => {
             setPosition({ x: event.clientX, y: event.clientY });
           }}
@@ -64,16 +64,21 @@ const ElevenSection = () => {
           {images.map((src, index) => (
             <div
               key={index}
-              className={`relative overflow-hidden  hover:after:bg-black/50 after:w-full after:h-full after:z-50 after:absolute after:top-0 after:left-0 after:transition-all group ${
-                index === 3 || index === 7 ? "row-span-2 col-span-2" : ""
+              className={`relative overflow-hidden  hover:after:bg-black/50 after:w-full after:h-full after:z-50 after:absolute after:top-0 after:left-0 after:transition-all group  ${
+                index == 3 || index === 7 ? "h-[342px]" : "h-[171px]"
+              } ${
+                index === 3
+                  ? "col-span-full md:col-span-2 md:row-span-2 -order-1 md:order-none"
+                  : index === 7
+                  ? "md:row-span-2 md:col-span-2 col-span-full md:order-none"
+                  : ""
               }`}
             >
               <Image
                 src={src}
                 alt={`Room ${index + 1}`}
-                width={500}
-                height={500}
-                className={`object-cover transition-transform duration-300 group-hover:scale-105 `}
+                fill
+                className={`object-cover transition-transform duration-300 group-hover:scale-105`}
                 priority={index < 2} // Load first two images with priority for performance
               />
             </div>
@@ -84,4 +89,4 @@ const ElevenSection = () => {
   );
 };
 
-export default ElevenSection;
+export default EleventhSFinishedWork;
