@@ -16,7 +16,7 @@ import TwelveSection from "@/components/pages/home/twelve-section";
 export default function Home() {
   return (
     <>
-      <div className="min-h-screen flex flex-col mb-8">
+      <div className="md:min-h-screen flex flex-col mb-8">
         <Header />
         <MainSection />
       </div>
@@ -30,7 +30,7 @@ export default function Home() {
       <NinthSection />
       <TenSection />
       <ElevenSection />
-      <div className="min-h-screen flex flex-col">
+      <div className="md:min-h-screen flex flex-col">
         <TwelveSection />
         <Footer />
       </div>

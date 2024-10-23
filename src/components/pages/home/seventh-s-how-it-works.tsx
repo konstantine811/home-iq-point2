@@ -3,7 +3,7 @@ import ProjectSteps from "@/components/common/project-steps";
 
 const SeventhSHowItWorks = () => {
   return (
-    <ColoredSection wrapClasses="min-h-screen py-8 flex flex-col justify-center items-center">
+    <ColoredSection wrapClasses="md:min-h-screen py-8 flex flex-col justify-center items-center">
       <h2 className="text-2xl md:text-3xl text-blue-900 font-extrabold pb-12 text-center">
         How it works
       </h2>

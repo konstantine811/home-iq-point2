@@ -9,7 +9,7 @@ import { useState } from "react";
 const EigthSGoogleReview = () => {
   const [isPlaying, setIsPlaying] = useState(true);
   return (
-    <section className="min-h-screen py-8 flex flex-col justify-center items-center">
+    <section className="md:min-h-screen py-8 flex flex-col justify-center items-center">
       <div className="container flex justify-between">
         <h2 className="text-2xl md:text-3xl text-blue-900 font-extrabold pb-12">
           Google reviews
