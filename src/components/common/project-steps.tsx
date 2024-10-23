@@ -1,19 +1,12 @@
 "use client";
 
 import { User, Building, Flag, MapPin, MessageSquare } from "lucide-react";
-import ScrolledCard from "./scrolled-card";
-import CardItems from "@/components/common/card-items";
-
-import { SVG_PATH_CONFIG } from "@/configs/cards";
-import dynamic from "next/dynamic";
-import SingleItem from "./items-components/single-item";
-import CoupleItems from "./items-components/couple-items";
-import MessagePopupContent from "./message-popup-content";
 import { StepperData } from "@/configs/stepper";
 import ArrayStepper from "./array-stepper";
 import CarouselDots from "../ui-updated/carousel-dots";
 import { CarouselContent, CarouselItem } from "../ui/carousel";
 import Stepper from "./stepper";
+import Image from "next/image";
 
 const CoupleCardItems = [
   {
@@ -49,44 +42,24 @@ const ProjectSteps = () => {
     <>
       <div className="hidden lg:block">
         <div className="grid grid-cols-3 place-items-center gap-10 pb-6">
-          <ScrolledCard>
-            <CardItems>
-              {SVG_PATH_CONFIG?.map((data, index) => {
-                const SvgComponent = dynamic(data.path);
-                return (
-                  <SingleItem key={index} title={data.title}>
-                    <div className="w-[40px] h-[40px]">
-                      <SvgComponent />
-                    </div>
-                  </SingleItem>
-                );
-              })}
-            </CardItems>
-          </ScrolledCard>
-          <ScrolledCard>
-            <CardItems>
-              {CoupleCardItems.map((data, index) => {
-                return (
-                  <CoupleItems
-                    key={index}
-                    title={data.title}
-                    subtitle={data.subtitle}
-                  >
-                    {data.icon}
-                  </CoupleItems>
-                );
-              })}
-            </CardItems>
-          </ScrolledCard>
-          <ScrolledCard isEnd>
-            <MessagePopupContent
-              isChecked
-              text="Lorem ipsum dolor sit amet consectetur. Dolor senectus id sodales mi
-        imperdiet pellentesque. Lorem ipsum dolor sit amet consectetur. Dolor
-        senectus"
-              time="9:18 PM"
-            />
-          </ScrolledCard>
+          <Image
+            src={"/images/select_home_project.png"}
+            alt={"Select Home Project Image"}
+            width={387}
+            height={300}
+          />
+          <Image
+            src={"/images/basic_questions.png"}
+            alt={"Baisc Questions Image"}
+            width={387}
+            height={300}
+          />
+          <Image
+            src={"/images/connect_with_pro.png"}
+            alt={"Connect with Pro Image"}
+            width={387}
+            height={300}
+          />
         </div>
         <ArrayStepper className="lg:grid-cols-3" stepperData={StepperData} />
       </div>
@@ -100,20 +73,12 @@ const MobileProjectSteps = () => {
     <CarouselDots className="lg:hidden">
       <CarouselContent>
         <CarouselItem className="basis-full flex flex-col justify-center items-center gap-6">
-          <ScrolledCard>
-            <CardItems>
-              {SVG_PATH_CONFIG?.map((data, index) => {
-                const SvgComponent = dynamic(data.path);
-                return (
-                  <SingleItem key={index} title={data.title}>
-                    <div className="w-[40px] h-[40px]">
-                      <SvgComponent />
-                    </div>
-                  </SingleItem>
-                );
-              })}
-            </CardItems>
-          </ScrolledCard>
+          <Image
+            src={"/images/select_home_project.png"}
+            alt={"Select Home Project Image"}
+            width={387}
+            height={300}
+          />
           <Stepper
             title={StepperData[0].title}
             label={StepperData[0].label}
@@ -121,21 +86,12 @@ const MobileProjectSteps = () => {
           />
         </CarouselItem>
         <CarouselItem className="basis-full flex flex-col justify-center items-center gap-6">
-          <ScrolledCard>
-            <CardItems>
-              {CoupleCardItems.map((data, index) => {
-                return (
-                  <CoupleItems
-                    key={index}
-                    title={data.title}
-                    subtitle={data.subtitle}
-                  >
-                    {data.icon}
-                  </CoupleItems>
-                );
-              })}
-            </CardItems>
-          </ScrolledCard>
+          <Image
+            src={"/images/basic_questions.png"}
+            alt={"Baisc Questions Image"}
+            width={387}
+            height={300}
+          />
           <Stepper
             title={StepperData[1].title}
             label={StepperData[1].label}
@@ -143,15 +99,12 @@ const MobileProjectSteps = () => {
           />
         </CarouselItem>
         <CarouselItem className="basis-full flex flex-col justify-center items-center gap-6">
-          <ScrolledCard isEnd>
-            <MessagePopupContent
-              isChecked
-              text="Lorem ipsum dolor sit amet consectetur. Dolor senectus id sodales mi
-      imperdiet pellentesque. Lorem ipsum dolor sit amet consectetur. Dolor
-      senectus"
-              time="9:18 PM"
-            />
-          </ScrolledCard>
+          <Image
+            src={"/images/connect_with_pro.png"}
+            alt={"Connect with Pro Image"}
+            width={387}
+            height={300}
+          />
           <Stepper
             title={StepperData[2].title}
             label={StepperData[2].label}

@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import Image from "next/image"; // If using Next.js for optimized images
 import { IImageConfig } from "@/models/data-config/image-config.model";
-import { motion, useAnimationFrame } from "framer-motion";
+import { useAnimationFrame } from "framer-motion";
 
 interface Props {
   images: IImageConfig[];
