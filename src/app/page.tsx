@@ -5,7 +5,7 @@ import EleventhSFinishedWork from "@/components/pages/home/eleventh-s-finished-w
 import FifthSection from "@/components/pages/home/fifth-section";
 import FourthSection from "@/components/pages/home/fourth-section";
 import MainSection from "@/components/pages/home/main-section";
-import NinthSection from "@/components/pages/home/ninth-section";
+import NinthSEmailSend from "@/components/pages/home/ninth-s-email-send";
 import SecondSection from "@/components/pages/home/second-section";
 import SeventhSHowItWorks from "@/components/pages/home/seventh-s-how-it-works";
 import SixthSection from "@/components/pages/home/sixth-section";
@@ -27,7 +27,7 @@ export default function Home() {
       <SixthSection />
       <SeventhSHowItWorks />
       <EightSGoogleReviews />
-      <NinthSection />
+      <NinthSEmailSend />
       <TenSVideoReview />
       <EleventhSFinishedWork />
       <div className="md:min-h-screen flex flex-col">
