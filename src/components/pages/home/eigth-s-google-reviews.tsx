@@ -24,7 +24,7 @@ const EigthSGoogleReview = () => {
         </InfiniteCarousel>
       </div>
       <div className="h-[216px] w-full">
-        <InfiniteCarousel isPlaying={isPlaying}>
+        <InfiniteCarousel delayBeforeStart={1000} isPlaying={isPlaying}>
           {ReviewCardItems2.map((data, index) => {
             return <ReviewCard className="mx-3" key={index} {...data} />;
           })}

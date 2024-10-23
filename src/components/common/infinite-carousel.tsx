@@ -1,23 +1,38 @@
 "use client";
 
 import { useAnimationFrame } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Props {
   children: React.ReactNode;
   isPlaying?: boolean;
+  delayBeforeStart?: number;
 }
 
-const InfiniteCarousel = ({ children, isPlaying = true }: Props) => {
+const InfiniteCarousel = ({
+  children,
+  isPlaying = true,
+  delayBeforeStart = 0,
+}: Props) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const xPosition = useRef(0);
   const [isHovered, setIsHovered] = useState(false);
+  const [animationStarted, setAnimationStarted] = useState(false); // New state to control when animation starts
 
   const normalSpeed = 0.05;
   const slowSpeed = 0.01; // Adjust this to your preferred slower speed
 
+  // Set up a delay before the animation starts
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setAnimationStarted(true); // Start animation after delay
+    }, delayBeforeStart);
+
+    return () => clearTimeout(timeout); // Clear timeout if component unmounts
+  }, []); // Run once on mount
+
   useAnimationFrame((_, delta) => {
-    if (!isPlaying) return; // Stop animation if not playing
+    if (!isPlaying || !animationStarted) return; // Stop animation if not playing or animation hasn't started
 
     if (containerRef.current) {
       const container = containerRef.current;

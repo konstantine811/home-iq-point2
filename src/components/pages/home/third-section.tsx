@@ -3,7 +3,6 @@ import ColoredSection from "@/components/common/colored-section";
 import { IImageConfig } from "@/models/data-config/image-config.model";
 import InfiniteCarousel from "@/components/common/infinite-carousel";
 import { splitArray } from "@/utils/array";
-import InfiniteBannerCarousel from "@/components/common/infinite-banner-carousel";
 
 const imageArray: IImageConfig[] = [
   {
@@ -67,10 +66,42 @@ const ThirdSection = () => {
         ))}
       </div>
       <div className="md:hidden flex gap-4 items-center w-full">
-        <InfiniteBannerCarousel height={30} images={firstHalf} />
+        <InfiniteCarousel>
+          {[...firstHalf, ...firstHalf].map((image, index) => (
+            <div
+              key={index}
+              style={{ minWidth: 70 + "px" }}
+              className="flex justify-center items-center p-2"
+            >
+              <Image
+                src={image.path}
+                alt={image.path}
+                width={70}
+                height={30}
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </InfiniteCarousel>
       </div>
       <div className="md:hidden flex gap-4 items-center w-full">
-        <InfiniteBannerCarousel height={30} images={secondHalf} />
+        <InfiniteCarousel delayBeforeStart={300}>
+          {[...secondHalf, ...secondHalf].map((image, index) => (
+            <div
+              key={index}
+              style={{ minWidth: 70 + "px" }}
+              className="flex justify-center items-center p-2"
+            >
+              <Image
+                src={image.path}
+                alt={image.path}
+                width={70}
+                height={30}
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </InfiniteCarousel>
       </div>
     </ColoredSection>
   );
