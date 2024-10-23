@@ -27,6 +27,7 @@ const InputGroup = ({ className }: Props) => {
             <Input
               className="border-none pl-2 focus-visible:ring-0 shadow-none text-gray-900 placeholder:text-gray-900 text-xl rounded-none h-full  focus:ring-0 focus:outline-none"
               placeholder="ZIP code"
+              type="text"
             />
           </div>
         </div>
