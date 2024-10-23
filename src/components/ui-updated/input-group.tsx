@@ -16,6 +16,7 @@ const InputGroup = ({ className }: Props) => {
         <Input
           className="border-none col-span-2 h-14 md:h-full  text-gray-900 placeholder:text-gray-900 text-xl rounded-none  flex-1 focus-visible:ring-0 py-3 pr-3 pl-6 md:py-0 md:pl-[60px] focus:ring-0 focus:outline-none"
           placeholder="How can we help?"
+          type="text"
         />
         {/* Divider */}
         <div className="relative h-full hidden md:block">
